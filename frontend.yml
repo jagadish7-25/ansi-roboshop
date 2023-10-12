@@ -31,6 +31,6 @@
 
     - name: Restart nginx
       ansible.builtin.systemd:
-        - name: nginx
-          state: restarted
-          enabled: yes
+         name: nginx
+         state: restarted
+         enabled: yes
