@@ -1,4 +1,4 @@
-- name: Frontend-roboshop
+- name: Frontend roboshop
   hosts: WEB
   become: true
   tasks:
