@@ -2,7 +2,7 @@
   hosts: all
   become: true
   tasks:
-    - name: install nginx
+    - name: Install nginx
       ansible.builtin.yum:
         - name: nginx
           state: installed
@@ -12,12 +12,12 @@
         src: nginx-roboshop.conf
         dest: /etc/nginx/default.d/roboshop.conf
 
-    - name: clean old content
+    - name: Clean old content
       ansible.builtin.file:
         path: /usr/share/nginx/html
         state: absent
 
-    - name: create app directory
+    - name: Create app directory
       ansible.builtin.file:
         path: /usr/share/nginx/html
         state: directory
@@ -29,7 +29,7 @@
         remote_src: yes
 
 
-    - name: restart nginx
+    - name: Restart nginx
       ansible.builtin.systemd:
         - name: nginx
           state: restarted
